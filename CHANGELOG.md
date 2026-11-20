@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/3ware/renovate-config/compare/v1.1.0...v1.2.0) (2026-11-20)
+
+
+### Features
+
+* **default:** add reviewersFromCodeOwners ([a4efc05](https://github.com/3ware/renovate-config/commit/a4efc055c3ff54256108f9100e4a14ac9f6d464c))
+
 ## [1.1.0](https://github.com/3ware/renovate-config/compare/v1.0.0...v1.1.0) (2026-11-20)
 
 
