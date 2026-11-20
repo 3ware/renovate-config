@@ -36,7 +36,8 @@
       "addLabels": ["review-required"],
       "automerge": false,
       "commitMessagePrefix": "build({{manager}})!: ",
-      "commitMessageTopic": "{{depName}}"
+      "commitMessageTopic": "{{depName}}",
+      "reviewers": ["chazypro"]
     },
     {
       "matchDepNames": ["github/gh-actions-lock"],
