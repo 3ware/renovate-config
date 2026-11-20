@@ -1,5 +1,7 @@
 # Renovate configuration preset repository
 
+[![GitHub release](https://img.shields.io/github/release/3ware/renovate-config?include_prereleases=&sort=semver&color=green)](https://github.com/3ware/renovate-config/releases/) [![issues - workflows](https://img.shields.io/github/issues/3ware/renovate-config)](https://github.com/3ware/renovate-config/issues) [![CI](https://img.shields.io/github/actions/workflow/status/3ware/renovate-config/pr-check.yaml?label=CI&logo=githubactions&logoColor=white)](https://github.com/3ware/renovate-config/actions/workflows/pr-check.yaml)
+
 ## Overview
 
 This repository contains reusable Renovate configuration presets that can be shared across multiple projects to standardize dependency update policies.
