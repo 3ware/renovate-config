@@ -1,0 +1,73 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices"],
+  "addLabels": ["{{manager}}"],
+  "assigneesFromCodeOwners": true,
+  "dependencyDashboardAutoclose": true,
+  "minimumReleaseAge": "14 days",
+  "terraform": {
+    "enabled": false
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.github/gh-actions-lock\\.version$/"],
+      "matchStrings": ["(?<currentValue>v\\d+\\.\\d+\\.\\d+)"],
+      "depNameTemplate": "github/gh-actions-lock",
+      "datasourceTemplate": "github-releases"
+    }
+  ],
+  "packageRules": [
+    {
+      "abandonmentThreshold": "2 years",
+      "matchManagers": ["github-actions"]
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "groupName": "{{manager}} non-major dependencies",
+      "groupSlug": "{{manager}}-minor-patch",
+      "addLabels": ["auto-merge"],
+      "automerge": false,
+      "commitMessagePrefix": "build({{manager}}): ",
+      "matchPackageNames": ["*"]
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["review-required"],
+      "automerge": false,
+      "commitMessagePrefix": "build({{manager}})!: ",
+      "commitMessageTopic": "{{depName}}"
+    },
+    {
+      "matchDepNames": ["github/gh-actions-lock"],
+      "commitMessagePrefix": "ci(actionlock): "
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "commitMessagePrefix": "ci({{manager}}): "
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchDepTypes": ["uses-with"],
+      "matchDepNames": ["opentofu"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["tflint-plugin"],
+      "commitMessagePrefix": "chore({{manager}}): "
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchDepNames": ["ghcr.io/terrateamio/action"],
+      "minimumReleaseAge": "0 days",
+      "schedule": ["* * * * *"]
+    }
+  ],
+  "schedule": ["* 19-23 * * 0", "* 0-8 * * 1"],
+  "vulnerabilityAlerts": {
+    "addLabels": ["security"],
+    "commitMessagePrefix": "build({{manager}}): ",
+    "rangeStrategy": "auto",
+    "schedule": ["at any time"]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en-GB",
+  "suggestionsTimeout": 5000,
+  "words": [
+    "actionlock",
+    "commitlint",
+    "docstrings",
+    "jsonvet",
+    "linters",
+    "pinact",
+    "pipefail",
+    "pullrequest",
+    "sarif",
+    "scriptdir",
+    "shellcheck",
+    "terrateam",
+    "terrateamio",
+    "tflint",
+    "threeware",
+    "zizmor"
+  ]
+}
