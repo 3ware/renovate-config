@@ -4,7 +4,7 @@
   "addLabels": ["{{manager}}"],
   "dependencyDashboardAutoclose": true,
   "minimumReleaseAge": "14 days",
-  "reviewersFromCodeOwnersFromCodeOwners": true,
+  "reviewersFromCodeOwners": true,
   "terraform": {
     "enabled": false
   },
@@ -36,8 +36,7 @@
       "addLabels": ["review-required"],
       "automerge": false,
       "commitMessagePrefix": "build({{manager}})!: ",
-      "commitMessageTopic": "{{depName}}",
-      "reviewers": ["chazypro"]
+      "commitMessageTopic": "{{depName}}"
     },
     {
       "matchDepNames": ["github/gh-actions-lock"],
