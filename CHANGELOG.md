@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/3ware/renovate-config/compare/v1.2.0...v1.2.1) (2026-11-21)
+
+
+### Bug Fixes
+
+* **default:** Correct reviewersFromCodeOwners key ([52009e0](https://github.com/3ware/renovate-config/commit/52009e0b2873a640b0d7cf68fd248d6a789fe4fb))
+
 ## [1.2.0](https://github.com/3ware/renovate-config/compare/v1.1.0...v1.2.0) (2026-11-20)
 
 
