@@ -59,12 +59,6 @@
       "commitMessagePrefix": "ci(actions): "
     },
     {
-      "matchManagers": ["github-actions"],
-      "matchDepTypes": ["uses-with"],
-      "matchDepNames": ["opentofu"],
-      "enabled": false
-    },
-    {
       "description": "Set commit message prefix for tflint-plugin updates",
       "matchManagers": ["tflint-plugin"],
       "commitMessagePrefix": "chore({{manager}}): "
