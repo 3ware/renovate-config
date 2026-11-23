@@ -5,6 +5,8 @@
   "dependencyDashboard": {
     "autoclose": true
   },
+  // gh actions-lock pins SHAs in actions.lock; workflows keep version tags
+  "ignorePresets": ["helpers:pinGitHubActionDigests"],
   "minimumReleaseAge": "14 days",
   "reviewersFromCodeOwners": true,
   "terraform": {
