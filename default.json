@@ -33,19 +33,16 @@
     },
     {
       "description": "Non-major version updates",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "pinDigest", "digest"],
       "groupName": "{{manager}} non-major dependencies",
       "groupSlug": "{{manager}}-minor-patch",
       "addLabels": ["auto-merge"],
-      "automerge": false,
-      "commitMessagePrefix": "build({{manager}}): ",
-      "matchPackageNames": ["*"]
+      "commitMessagePrefix": "build({{manager}}): "
     },
     {
       "description": "Major version updates",
       "matchUpdateTypes": ["major"],
       "addLabels": ["review-required"],
-      "automerge": false,
       "commitMessagePrefix": "build({{manager}})!: ",
       "commitMessageTopic": "{{depName}}"
     },
@@ -77,14 +74,11 @@
       "matchManagers": ["github-actions"],
       "matchDepNames": ["ghcr.io/terrateamio/action"],
       "minimumReleaseAge": "0 days",
-      "schedule": ["* * * * *"]
+      "schedule": ["at any time"]
     }
   ],
   "schedule": ["* 19-23 * * 0", "* 0-8 * * 1"],
   "vulnerabilityAlerts": {
-    "addLabels": ["security"],
-    "commitMessagePrefix": "build(security): ",
-    "rangeStrategy": "auto",
-    "schedule": ["at any time"]
+    "addLabels": ["security"]
   }
 }
