@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.0](https://github.com/3ware/renovate-config/compare/v1.3.0...v1.4.0) (2026-11-23)
+
+
+### Features
+
+* **renovate:** Add ignorePresets for action digests ([2dc6977](https://github.com/3ware/renovate-config/commit/2dc6977246bb9481f8f04039476d85634fbde1e8))
+
+
+### Code Refactoring
+
+* **renovate:** Remove default values ([6558f5e](https://github.com/3ware/renovate-config/commit/6558f5e7d65e9b26720eeffbd86dd116c2f8dad8))
+* **renovate:** Remove opentofu uses-with rule ([d2dfa7c](https://github.com/3ware/renovate-config/commit/d2dfa7c8da6e16616678da67e95c0b72701cde67))
+* **renovate:** Replace addLabels with labels and override gh-actions-lock label ([3fcc8b7](https://github.com/3ware/renovate-config/commit/3fcc8b70e63fd364bf972c4614dd1384c8dd05f2))
+* **renovate:** Use new dependencyDashboard syntax ([08b3a05](https://github.com/3ware/renovate-config/commit/08b3a054d37c92e6a330c4e8702180a2dffc5f1c))
+
 ## [1.3.0](https://github.com/3ware/renovate-config/compare/v1.2.1...v1.3.0) (2026-11-23)
 
 
