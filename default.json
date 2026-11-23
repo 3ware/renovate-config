@@ -1,12 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices"],
-  "addLabels": ["{{manager}}"],
   "dependencyDashboard": {
     "autoclose": true
   },
   // gh actions-lock pins SHAs in actions.lock; workflows keep version tags
   "ignorePresets": ["helpers:pinGitHubActionDigests"],
+  "labels": ["{{manager}}"],
   "minimumReleaseAge": "14 days",
   "reviewersFromCodeOwners": true,
   "terraform": {
@@ -21,6 +21,9 @@
       "datasourceTemplate": "github-releases"
     }
   ],
+  // Major releases add 'review-required' label
+  // Minor and patch releases add 'auto-merge' label
+  // PRs labelled with 'auto-merge' will be approved by auto-approve job in pr check workflow
   "packageRules": [
     {
       "abandonmentThreshold": "2 years",
@@ -43,11 +46,13 @@
       "commitMessageTopic": "{{depName}}"
     },
     {
-      "matchDepNames": ["github/gh-actions-lock"],
+      "matchManagers": ["github-actions"],
       "commitMessagePrefix": "ci(actions): "
     },
     {
-      "matchManagers": ["github-actions"],
+      "matchDepNames": ["github/gh-actions-lock"],
+      // Override the custom.regex manager label
+      "labels": ["github-actions"],
       "commitMessagePrefix": "ci(actions): "
     },
     {
