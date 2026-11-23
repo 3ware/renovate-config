@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/3ware/renovate-config/compare/v1.2.1...v1.3.0) (2026-11-23)
+
+
+### Features
+
+* **renovate:** Update vulnerability alert commit message scope ([#9](https://github.com/3ware/renovate-config/issues/9)) ([1c24785](https://github.com/3ware/renovate-config/commit/1c2478542c633bc09a95328c5d85e3f1db7b0b18))
+
 ## [1.2.1](https://github.com/3ware/renovate-config/compare/v1.2.0...v1.2.1) (2026-11-21)
 
 
