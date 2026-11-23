@@ -7,7 +7,7 @@ plugins:
       ref: v1.11.0
       uri: https://github.com/trunk-io/plugins
     - id: 3ware
-      ref: v1.1.1
+      ref: v1.2.0
       uri: https://github.com/3ware/trunk-code-quality-plugins
 lint:
   files:
