@@ -43,4 +43,5 @@ jobs:
           labels: auto-merge,trunk
           lowercase-title: true
           prefix: "ci(trunk): "
+          reviewers: chazypro
           sign-commits: true

@@ -7,10 +7,16 @@ workflows:
         - 'actions/checkout@v7.0.1'
         - 'actions/create-github-app-token@v3.3.0'
         - 'planetscale/ghcommit-action@v0.2.22'
-    '.github/workflows/lint.yaml': []
+    '.github/workflows/lint.yaml':
+        - 'actions/checkout@v7.0.1'
+        - 'trunk-io/trunk-action@v2.0.0'
     '.github/workflows/pr-check.yaml':
         - 'actions/checkout@v7.0.1'
+        - 'actions/create-github-app-token@v3.3.0'
+        - 'amannn/action-semantic-pull-request@v6.1.1'
         - 'lekman/auto-approve-action@v1'
+        - 'marocchino/sticky-pull-request-comment@v3.0.5'
+        - 'planetscale/ghcommit-action@v0.2.22'
         - 'poseidon/wait-for-status-checks@v0.7.0'
     '.github/workflows/release.yaml':
         - 'actions/create-github-app-token@v3.3.0'
@@ -52,6 +58,11 @@ dependencies:
         commit: 'sha1-043fb46d1a93c77aae656e7c1c64a875d1fc6a0a'
         owner_id: 44036562
         repo_id: 192625955
+    'amannn/action-semantic-pull-request@v6.1.1':
+        ref: 'v6.1.1'
+        commit: 'sha1-48f256284bd46cdaab1048c3721360e808335d50'
+        owner_id: 4038316
+        repo_id: 220418983
     'googleapis/release-please-action@v5.0.0':
         ref: 'v5.0.0'
         commit: 'sha1-45996ed1f6d02564a971a2fa1b5860e934307cf7'
@@ -62,6 +73,11 @@ dependencies:
         commit: 'sha1-a936b84a6b145980623b78998fca2e6a2a311413'
         owner_id: 5329253
         repo_id: 999997896
+    'marocchino/sticky-pull-request-comment@v3.0.5':
+        ref: 'v3.0.5'
+        commit: 'sha1-5770ad5eb8f42dd2c4f34da00c94c5381e49af88'
+        owner_id: 128431
+        repo_id: 223043916
     'mattraks/delete-workflow-runs@v2.1.0':
         ref: 'v2.1.0'
         commit: 'sha1-b3018382ca039b53d238908238bd35d1fb14f8ee'

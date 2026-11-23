@@ -26,11 +26,16 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v7.0.1
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-      - run: gh extension install github/gh-actions-lock --pin "$(<.github/gh-actions-lock.version)"
-      - run: gh actions-lock --verify
+
+      - name: Install GH Actions Lock Extension
+        run: gh extension install github/gh-actions-lock --pin "$(<.github/gh-actions-lock.version)"
+
+      - name: Verify Lockfile
+        run: gh actions-lock
 
   update:
     needs: verify
@@ -45,14 +50,19 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v7.0.1
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-      - run: gh extension install github/gh-actions-lock --pin "$(<.github/gh-actions-lock.version)"
-      - run: gh actions-lock
+
+      - name: Install GH Actions Lock Extension
+        run: gh extension install github/gh-actions-lock --pin "$(<.github/gh-actions-lock.version)"
+
+      - name: Update Lockfile
+        run: gh actions-lock
 
       # Workflow triggered by GITHUB_TOKEN require manual approval
-      # Use threeware-bot application token for lockfile commits
+      # Use threeware-release application token for lockfile commits
       - name: Get GitHub App token
         id: app-token
         uses: actions/create-github-app-token@v3.3.0
@@ -71,4 +81,4 @@ jobs:
           repo: ${{ github.repository }}
           branch: ${{ github.head_ref }}
           file_pattern: .github/workflows/actions.lock
-          commit_message: "ci(github-actions): Update lockfile"
+          commit_message: update actions lockfile

@@ -9,11 +9,23 @@ on:
 permissions: {}
 
 jobs:
-  trunk:
+  trunk-code-quality:
     name: Trunk Code Quality
     permissions:
-      contents: read
-    uses: 3ware/workflows/.github/workflows/reusable-trunk-code-quality.yaml@v5.0.0
-    secrets:
-      threeware-bot-app-id: ${{ secrets.THREEWARE_RELEASE_APPLICATION_ID }}
-      threeware-bot-private-key: ${{ secrets.THREEWARE_RELEASE_APPLICATION_PRIVATE_KEY }}
+      contents: read # Required to checkout the repository
+    runs-on: ubuntu-slim
+    concurrency:
+      group: trunk-${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Run Code Quality
+        uses: trunk-io/trunk-action@v2.0.0
+        with:
+          # Run 'trunk check --all' on linter upgrades to verify updates do not
+          # produce errors
+          arguments: ${{ github.head_ref == 'trunk-io/update-trunk' && '--all' || '' }}
