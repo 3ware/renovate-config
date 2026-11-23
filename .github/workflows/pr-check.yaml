@@ -51,6 +51,7 @@ jobs:
             deps
             release
             renovate
+            security
             trunk
           # Deny characters &, <, and > in the subject line to ensure proper formatting
           # https://docs.slack.dev/messaging/formatting-message-text/#escaping
