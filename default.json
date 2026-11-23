@@ -15,10 +15,11 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/gh-actions-lock\\.version$/"],
-      "matchStrings": ["(?<currentValue>v\\d+\\.\\d+\\.\\d+)"],
+      "description": "Custom manager for gh actions-lock version updates",
+      "datasourceTemplate": "github-releases",
       "depNameTemplate": "github/gh-actions-lock",
-      "datasourceTemplate": "github-releases"
+      "managerFilePatterns": ["/^\\.github/gh-actions-lock\\.version$/"],
+      "matchStrings": ["(?<currentValue>v\\d+\\.\\d+\\.\\d+)"]
     }
   ],
   // Major releases add 'review-required' label
@@ -26,10 +27,12 @@
   // PRs labelled with 'auto-merge' will be approved by auto-approve job in pr check workflow
   "packageRules": [
     {
+      "description": "Abandonment policy for GitHub Actions",
       "abandonmentThreshold": "2 years",
       "matchManagers": ["github-actions"]
     },
     {
+      "description": "Non-major version updates",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "groupName": "{{manager}} non-major dependencies",
       "groupSlug": "{{manager}}-minor-patch",
@@ -39,6 +42,7 @@
       "matchPackageNames": ["*"]
     },
     {
+      "description": "Major version updates",
       "matchUpdateTypes": ["major"],
       "addLabels": ["review-required"],
       "automerge": false,
@@ -46,10 +50,12 @@
       "commitMessageTopic": "{{depName}}"
     },
     {
+      "description": "GitHub Action updates",
       "matchManagers": ["github-actions"],
       "commitMessagePrefix": "ci(actions): "
     },
     {
+      "description": "Version updates for gh actions-lock",
       "matchDepNames": ["github/gh-actions-lock"],
       // Override the custom.regex manager label
       "labels": ["github-actions"],
@@ -62,10 +68,12 @@
       "enabled": false
     },
     {
+      "description": "Set commit message prefix for tflint-plugin updates",
       "matchManagers": ["tflint-plugin"],
       "commitMessagePrefix": "chore({{manager}}): "
     },
     {
+      "description": "Force immediate updates for terrateamio GitHub Action",
       "matchManagers": ["github-actions"],
       "matchDepNames": ["ghcr.io/terrateamio/action"],
       "minimumReleaseAge": "0 days",
