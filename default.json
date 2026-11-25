@@ -58,6 +58,7 @@
       "matchDepNames": ["github/gh-actions-lock"],
       // Override the custom.regex manager label
       "labels": ["github-actions"],
+      "addLabels": ["{{#if isMajor}}review-required{{else}}auto-merge{{/if}}"],
       "commitMessagePrefix": "ci(actions): "
     },
     {
