@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.5.0](https://github.com/3ware/renovate-config/compare/v1.4.0...v1.5.0) (2026-11-25)
+
+
+### Features
+
+* **renovate:** Add label for gh actions-lock updates ([a4970f1](https://github.com/3ware/renovate-config/commit/a4970f18db38fd8a5a3c185b15c77f889767c11b))
+* **renovate:** Exclude reusable workflows from auto-merge ([d0c1f85](https://github.com/3ware/renovate-config/commit/d0c1f856e0a8588d271657ac25c7960c8119b166))
+
 ## [1.4.0](https://github.com/3ware/renovate-config/compare/v1.3.0...v1.4.0) (2026-11-23)
 
 
