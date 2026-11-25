@@ -34,6 +34,8 @@
     {
       "description": "Non-major version updates",
       "matchUpdateTypes": ["minor", "patch", "pin", "pinDigest", "digest"],
+      // Reusable workflows are excluded: updates need manual review, so no auto-merge label or grouping
+      "matchFileNames": ["!.github/workflows/reusable-*.yaml"],
       "groupName": "{{manager}} non-major dependencies",
       "groupSlug": "{{manager}}-minor-patch",
       "addLabels": ["auto-merge"],
