@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/3ware/renovate-config/compare/v1.5.0...v1.5.1) (2026-11-28)
+
+
+### Bug Fixes
+
+* **renovate:** Use 'tflint' as commit message scope for tflint-plugin ([cf34451](https://github.com/3ware/renovate-config/commit/cf344510439a0e2c28f911c32953ba0347dc593e))
+
 ## [1.5.0](https://github.com/3ware/renovate-config/compare/v1.4.0...v1.5.0) (2026-11-25)
 
 
