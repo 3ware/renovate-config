@@ -64,7 +64,7 @@
     {
       "description": "Set commit message prefix for tflint-plugin updates",
       "matchManagers": ["tflint-plugin"],
-      "commitMessagePrefix": "chore({{manager}}): "
+      "commitMessagePrefix": "chore(tflint): "
     },
     {
       "description": "Force immediate updates for terrateamio GitHub Action",
